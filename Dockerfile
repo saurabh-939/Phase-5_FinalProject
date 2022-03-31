@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-
+FROM openjdk:11
 ENV DEBIAN_FRONTEND=non-interactive
 # Install dependencies
 RUN apt-get update -y
@@ -17,6 +17,8 @@ ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 
+ADD SpringBootAws-0.0.1-SNAPSHOT.war  SpringBootAws-0.0.1-SNAPSHOT.war
+ENTRYPOINT ["java","-jar","SpringBootAws-0.0.1-SNAPSHOT.war"]
 
 EXPOSE 80
 
