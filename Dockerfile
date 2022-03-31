@@ -1,4 +1,4 @@
-#define base docker image
-LABEL maintainer="Docker"
-ADD target/SpringBootAws-0.0.1-SNAPSHOT.war  SpringBootAws.war
-ENTRYPOINT ["java","-jar","SpringBootAws.war"]
+FROM openjdk:8-jdk
+COPY ./target/SpringBootAws-0.0.1-SNAPSHOT.war SpringBootAws-0.0.1-SNAPSHOT.war
+CMD ["java" ,"-jar","SpringBootAws-0.0.1-SNAPSHOT.war"]
+RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
