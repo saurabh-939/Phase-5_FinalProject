@@ -1,5 +1,5 @@
 
-FROM openjdk:11
+FROM openjdk:11-jdk
 ADD /home/ubuntu/SpringBootAws.war SpringBootAws.war
 EXPOSE 8085 
 ENTRYPOINT ["java","-jar","SpringBootAws.war"]
