@@ -3,11 +3,9 @@
 FROM openjdk:11
 EXPOSE 8085
 
+ADD target/SpringBootAws-0.0.1-SNAPSHOT.war SpringBootAws-0.0.1-SNAPSHOT.war
 
-COPY ./home/ubuntu/SpringBootAws-0.0.1-SNAPSHOT.war /usr/src/springboot/
-WORKDIR /usr/src/springboot
-EXPOSE 8080
-CMD ["java", "-jar", "SpringBootAws-0.0.1-SNAPSHOT.war"]
+ENTRYPOINT["java", "-jar", "SpringBootAws-0.0.1-SNAPSHOT.war"]
 
 
 
